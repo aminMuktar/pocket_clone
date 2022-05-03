@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_clone/src/ui/login.dart';
+import 'package:pocket_clone/src/ui/mylist.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -8,9 +8,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
+      theme: ThemeData.dark(),
       home: Scaffold(
-        body: Login(),
+        body: MyList(),
       ),
     );
   }
