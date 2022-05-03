@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'ui/landing.dart';
-
+import 'package:pocket_clone/src/ui/login.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -11,7 +10,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
       home: Scaffold(
-        body: Landing(),
+        body: Login(),
       ),
     );
   }
