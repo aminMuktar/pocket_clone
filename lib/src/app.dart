@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_clone/src/ui/mylist.dart';
+import 'package:pocket_clone/src/ui/discover.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -10,7 +10,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Scaffold(
-        body: MyList(),
+        body: Discover(),
       ),
     );
   }
