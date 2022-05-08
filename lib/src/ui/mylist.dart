@@ -231,13 +231,7 @@ class _MyListState extends State<MyList> {
             ),
             label: "Discover",
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              MdiIcons.bellOutline,
-              size: 30,
-            ),
-            label: "Activity",
-          ),
+
           BottomNavigationBarItem(
             icon: Icon(
               MdiIcons.account,
