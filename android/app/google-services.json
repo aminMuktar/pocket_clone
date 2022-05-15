@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "378963544245",
+    "project_id": "yawiwe-b8e24",
+    "storage_bucket": "yawiwe-b8e24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378963544245:android:4ca6ee630ea90b06c696fc",
+        "android_client_info": {
+          "package_name": "com.example.pocket_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378963544245-ea3gjb575drsnb6c16darbm1vj8eekfr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pocket_clone",
+            "certificate_hash": "994edde759feb12f5475787ae40e2cc0046389b8"
+          }
+        },
+        {
+          "client_id": "378963544245-2paa0v1bjkjc8eq8f1rpqgjij499gu7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO_fM--L24P-HtBPxIrVQCbPI0mZb8_k0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378963544245-2paa0v1bjkjc8eq8f1rpqgjij499gu7a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

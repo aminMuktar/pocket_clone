@@ -31,66 +31,50 @@ class _LandingState extends State<Landing> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          SizedBox(
-            height: 100,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children:<Widget>[
-              Image(
-                  image: AssetImage('images/pocket.png'),
-                  height:30,
-                width: 30,
-
-              ),
+      child: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              imageCarousel(),
               SizedBox(
-                width: 10,
+                height: 30.0,
               ),
-              Text(
-                "pocket",
-                    style: TextStyle(
-                      fontSize: 35,
-                      color: Colors.blueGrey,
-                    ),
+              TextButton(
+
+                onPressed: () {
+
+                  },
+                child: Text("Sign up",
+                  style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Montserrat',
+                  fontSize: 20,
+                ) ,),
+                style: TextButton.styleFrom(
+
+                  padding: const EdgeInsets.only(bottom:15,top: 15,left: 130,right: 130),
+                  backgroundColor: Color(0xff0d5ee0),
+                  shadowColor: Color(0xff031b42),
+                ),
+              ),
+          SizedBox(height: 10,),
+              TextButton(
+                style: ButtonStyle(
+                  foregroundColor: MaterialStateProperty.all<Color>(Color(0xff0d5ee0)),
+                ),
+                onPressed: () { },
+                child: Text('Log in',style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Montserrat',
+                  fontSize: 20,
+                ),),
               )
             ],
-      ),
           ),
-
-          imageCarousel(),
-          SizedBox(
-            height: 30.0,
-          ),
-          TextButton(
-
-            onPressed: () {
-              // Navigator.push(
-              //     context,
-              //     MaterialPageRoute(builder: (context) => const Signup())
-              // );
-              },
-            child: Text("Sign up", style: TextStyle(fontSize: 15,color: Colors.white,) ,),
-            style: TextButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5),
-              ),
-              padding: const EdgeInsets.only(bottom:15,top: 15,left: 130,right: 130),
-              backgroundColor: Color(0xff2d5c10),
-              shadowColor: Colors.green,
-            ),
-          ),
-      SizedBox(height: 10,),
-          TextButton(
-            style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.all<Color>(Color(0xff2d5c10)),
-            ),
-            onPressed: () { },
-            child: Text('Log in'),
-          )
-        ],
+        ),
       ),
     );
   }
@@ -223,7 +207,7 @@ class _LandingState extends State<Landing> {
       dotHeight:  10.0,
       strokeWidth:  1.5,
       dotColor:  Colors.grey,
-      activeDotColor:  Colors.green ,
+      activeDotColor:  Color(0xff0d5ee0) ,
     )
   );
 

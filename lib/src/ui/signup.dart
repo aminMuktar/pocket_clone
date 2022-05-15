@@ -182,7 +182,7 @@ class _LoginState extends State<Login> {
                               Text(
                                 "OR",
                                 style:
-                                    TextStyle(fontSize: 15, color: Colors.grey),
+                                TextStyle(fontSize: 15, color: Colors.grey),
                               ),
                               Expanded(
                                 child: Divider(
@@ -202,13 +202,13 @@ class _LoginState extends State<Login> {
                                 }
                                 else if(snapshot.connectionState == ConnectionState.done){
                                   return Container(
-                                    alignment: Alignment.center,
-                                    padding: EdgeInsets.only(top: 10),
-                                    child: _isSigningIn
-                                    ? CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(Color(0xff0d5ee0)),
-                                    )
-                                     : SignInButton(
+                                      alignment: Alignment.center,
+                                      padding: EdgeInsets.only(top: 10),
+                                      child: _isSigningIn
+                                          ? CircularProgressIndicator(
+                                        valueColor: AlwaysStoppedAnimation<Color>(Color(0xff0d5ee0)),
+                                      )
+                                          : SignInButton(
                                         Buttons.Google,
                                         onPressed: () async {
                                           setState(() {
@@ -227,7 +227,7 @@ class _LoginState extends State<Login> {
                                           }
                                         },
 
-                                    )
+                                      )
                                   );
                                 }
                                 return CircularProgressIndicator(
@@ -238,7 +238,20 @@ class _LoginState extends State<Login> {
                               }
 
                           ),
-
+                          SizedBox(
+                            width: 10,
+                          ),
+                          SignInButton(
+                            Buttons.Facebook,
+                            onPressed: () {},
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          SignInButton(
+                            Buttons.GitHub,
+                            onPressed: () {},
+                          ),
                         ],
                       ),
                     ),

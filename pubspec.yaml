@@ -42,6 +42,9 @@ dependencies:
   firebase_analytics: ^9.1.1
   firebase_auth: ^3.3.8
   google_sign_in: ^5.3.0
+  http: ^0.13.4
+  google_fonts: ^2.3.2
+
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +76,10 @@ flutter:
     - family: Montserrat
       fonts:
         - asset: fonts/Montserrat/static/Montserrat-Thin.ttf
+    - family: Montserrat-Medium
+      fonts:
+        - asset: fonts/Montserrat/static/Montserrat-Medium.ttf
+          weight: 500
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

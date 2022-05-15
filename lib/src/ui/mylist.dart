@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 // import 'dart:math' as math;
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:pocket_clone/src/ui/discover.dart';
+import 'package:pocket_clone/src/ui/home.dart';
+import 'package:pocket_clone/src/ui/profile.dart';
+import 'package:pocket_clone/src/ui/search.dart';
 
 class MyList extends StatefulWidget {
   const MyList({Key? key}) : super(key: key);
@@ -9,227 +13,135 @@ class MyList extends StatefulWidget {
   State<MyList> createState() => _MyListState();
 }
 
-class _MyListState extends State<MyList> {
-  var popUpMenuItemsList = <String>[
-    'Bulk Edit',
-    'Refresh',
-    'Settings',
-    'Help',
-    'Listen (TTS)'
+class _MyListState extends State<MyList> with SingleTickerProviderStateMixin {
+  int _currentIndex=0;
+  final List<Widget> _bottomNavigationBarRoute=[
+    Home(),
+    Discover(),
+    Search(),
+    Profile()
   ];
-
-  Widget emptyList() {
-    return Center();
+  void onTappedBar(int index){
+    setState(() {
+      _currentIndex=index;
+    });
   }
-
-  void onSelect(item) {
-    switch (item) {
-      case 'Bulk Edit':
-        print('Bulk Edit clicked');
-        break;
-
-      case 'Refresh':
-        print('Refresh clicked');
-        break;
-      case 'Settings':
-        print('Settings clicked');
-        break;
-      case 'Help':
-        print('Help clicked');
-        break;
-      case 'Listen (TTS)':
-        print('Listen (TTS) clicked');
-        break;
-    }
-  }
-
-  Widget bodyField() {
-    return Column(
-      children: [
-        Container(
-          margin: EdgeInsets.all(8),
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                child: OutlinedButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Search your list",
-                    style: TextStyle(
-                      color: Color(0xff808080),
-                    ),
-                  ),
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  showModalBottomSheet<void>(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return Container(
-                          height: 250,
-                          child: Center(
-                            child: ListView(
-                              children: <Widget>[
-                                ListTile(
-                                  onTap:(){},
-
-                                  title: Text(
-                                    'Newest saved',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold,),
-                                  ),
-                                ),
-                                ListTile(
-                                  title: Text(
-                                    'Oldest saved',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                ListTile(
-                                  title: Text(
-                                    'Shortest to read',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                ListTile(
-                                  title: Text(
-                                    'Longest to read',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ],
+  Widget appBarWidgets(){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        IconButton(
+          iconSize: 60,
+          onPressed: () {
+            showModalBottomSheet<void>(
+                context: context,
+                builder: (BuildContext context) {
+                  return Container(
+                    height: 250,
+                    child: Center(
+                      child: ListView(
+                        children: <Widget>[
+                          ListTile(
+                            onTap:(){},
+                            title: Text(
+                              'Newest',
+                              style:
+                              TextStyle(fontWeight: FontWeight.bold,),
                             ),
                           ),
-                        );
-                      });
-                },
-                icon: const Icon(
-                  Icons.sort,
-                  size: 30.0,
-                ),
-              ),
-              // body card
-            ],
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.all(8),
-          child: Card(
-            elevation: 4,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-              child: Container(
-                height: 200,
-                child: Stack(
-                  children: <Widget>[
-                    ListTile(
-                      title: Text("Hello world"),
-                      subtitle: Text("Hello world"),
-                    ),
-                    Positioned(
-                        right: 0,
-                        top: 0,
-                        child: Image(
-                          image: AssetImage("images/book1.png"),
-                          width: 150,
-                          height: 100,
-                          fit: BoxFit.cover,
-                        )),
-                    Positioned(
-                      right: 0,
-                      bottom: 0,
-                      child: Row(
-                        children: <Widget>[
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.share),
+                          ListTile(
+                            title: Text(
+                              'Oldest',
+                              style:
+                              TextStyle(fontWeight: FontWeight.bold),
+                            ),
                           ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.delete),
+                          ListTile(
+                            title: Text(
+                              'Shortest to read',
+                              style:
+                              TextStyle(fontWeight: FontWeight.bold),
+                            ),
                           ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(MdiIcons.playCircleOutline),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(MdiIcons.dotsVertical),
+                          ListTile(
+                            title: Text(
+                              'Longest to read',
+                              style:
+                              TextStyle(fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-            ),
+                  );
+                });
+          },
+          icon: const Icon(
+            Icons.sort,
+            size: 30.0,
+            color: Colors.white,
           ),
         ),
+        // body card
       ],
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // backgroundColor: Colors.white,
         elevation: 0,
-        bottom: PreferredSize(
-          child: Container(
-            color: Colors.white60,
-            height: 1,
-          ),
-          preferredSize: Size.fromHeight(1),
-        ),
-        title: const Text(
-          "My List",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-        ),
-        actions: <Widget>[
-          IconButton(onPressed: () {}, icon: const Icon(MdiIcons.headphones)),
-          IconButton(
-              onPressed: () {}, icon: const Icon(MdiIcons.diamondOutline)),
-          PopupMenuButton<String>(
-              itemBuilder: (BuildContext context) {
-                return popUpMenuItemsList.map((String choice) {
-                  return PopupMenuItem<String>(
-                    child: Text(choice),
-                    value: choice,
-                  );
-                }).toList();
-              },
-              onSelected: onSelect)
-        ],
+        actions:[
+          appBarWidgets(),
+        ]
       ),
-      body: Column(
-        children: <Widget>[
-          Container(
-            child: bodyField(),
-          ),
-        ],
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: <Widget>[
+            Container(
+              child:Column(
+                children:<Widget>[
+                  _bottomNavigationBarRoute[_currentIndex],
+                ],
+        )
+
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white60,
-        showUnselectedLabels: true,
+        onTap: onTappedBar,
+        elevation: 5,
+        currentIndex: _currentIndex,
+        selectedItemColor: Color(0xff0d5ee0),
+        unselectedItemColor: Colors.white,
+        showSelectedLabels: false,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              MdiIcons.menuOpen,
+              Icons.home_outlined,
               size: 30,
             ),
-            label: "My List",
+            label: "Home",
           ),
+
           BottomNavigationBarItem(
             icon: Icon(
               Icons.explore_outlined,
               size: 30,
             ),
             label: "Discover",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search_outlined,
+              size: 30,
+            ),
+            label: "Profile",
           ),
 
           BottomNavigationBarItem(

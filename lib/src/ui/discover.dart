@@ -41,18 +41,6 @@ class _DiscoverState extends State<Discover> {
     return Column(
       children: <Widget>[
         Container(
-          padding: EdgeInsets.all(20),
-          alignment: Alignment.topLeft,
-          child: Text(
-            "Editor's picks",
-            style: TextStyle(
-              fontSize: 24,
-
-            ),
-          ),
-        ),
-        Container(
-
           padding: EdgeInsets.only(left:20,bottom: 30,right: 20),
           alignment: Alignment.center,
           child: Card(
@@ -141,84 +129,7 @@ class _DiscoverState extends State<Discover> {
       ],
     );
   }
-  Widget gridCategory(){
-      return Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Expanded(
-                child:Container(
-                  padding: EdgeInsets.only(left:20,bottom: 30,right: 20),
-                    child: Column(
-                      children: [
-                        Image.asset('images/book1.png'),
-                        ListTile(
-                          title: Text("Main Title"),
-                          subtitle: Text("author"),
-                        ),
 
-
-                      ],
-                    )
-                ),
-              ),
-              Expanded(
-                child:Container(
-                    padding: EdgeInsets.only(left:20,bottom: 30,right: 20),
-                    child: Column(
-                      children: [
-                        Image.asset('images/book1.png'),
-                        ListTile(
-                          title: Text("Main Title"),
-                          subtitle: Text("author"),
-                        ),
-                      ],
-                    )
-                ),
-              ),
-          ]
-
-          ),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Expanded(
-                  child:Container(
-                      padding: EdgeInsets.only(left:20,bottom: 30,right: 20),
-                      child: Column(
-                        children: [
-                          Image.asset('images/book1.png'),
-                          ListTile(
-                            title: Text("Main Title"),
-                            subtitle: Text("author"),
-                          ),
-                        ],
-                      )
-                  ),
-                ),
-                Expanded(
-                  child:Container(
-                      padding: EdgeInsets.only(left:20,bottom: 30,right: 20),
-                      child: Column(
-                        children: [
-                          Image.asset('images/book1.png'),
-                          ListTile(
-                            title: Text("Main Title"),
-                            subtitle: Text("author"),
-                          ),
-
-
-                        ],
-                      )
-                  ),
-                ),
-              ]
-
-          ),
-        ],
-      );
-  }
   Widget categoryList(){
     return DefaultTabController(
         length: 13,
@@ -228,18 +139,23 @@ class _DiscoverState extends State<Discover> {
           unselectedLabelColor: Colors.white,
           indicatorSize: TabBarIndicatorSize.label,
           indicator: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
+            color: Color(0xff0d5ee0),
+            borderRadius: BorderRadius.circular(60),
+              border: Border.all(
+                  color: Colors.white,
+                  width: 1
+              )
           ),
           tabs: <Widget>[
             Tab(
                 child: Container(
                   alignment: Alignment.center,
                   margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.only(left: 30,right: 30),
+                  padding: EdgeInsets.only(left: 40,right: 40),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all(
-                      color: Colors.white60,
+                      color: Colors.white,
                       width: 1
                     )
                   ),
@@ -254,7 +170,7 @@ class _DiscoverState extends State<Discover> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(
-                          color: Colors.white60,
+                          color: Colors.white,
                             width: 1
                         )
                       ),
@@ -269,7 +185,7 @@ class _DiscoverState extends State<Discover> {
                   decoration:BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all(
-                      color: Colors.white60,
+                      color: Colors.white,
                       width: 1
                     )
                   ),
@@ -285,7 +201,7 @@ class _DiscoverState extends State<Discover> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all(
-                      color: Colors.white60,
+                      color: Colors.white,
                       width: 1
                     )
                   ),
@@ -300,7 +216,7 @@ class _DiscoverState extends State<Discover> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(
-                      color: Colors.white60,
+                      color: Colors.white,
                       width: 1
                   ),
                 ),
@@ -315,7 +231,7 @@ class _DiscoverState extends State<Discover> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all(
-                        color: Colors.white60,
+                        color: Colors.white,
                         width: 1
                     ),
                   ),
@@ -329,7 +245,7 @@ class _DiscoverState extends State<Discover> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(
-                      color: Colors.white60,
+                      color: Colors.white,
                       width: 1
                   ),
                 ),
@@ -344,7 +260,7 @@ class _DiscoverState extends State<Discover> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(
-                      color: Colors.white60,
+                      color: Colors.white,
                       width: 1
                   ),
                 ),
@@ -359,7 +275,7 @@ class _DiscoverState extends State<Discover> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all(
-                        color: Colors.white60,
+                        color: Colors.white,
                         width: 1
                     ),
                   ),
@@ -374,7 +290,7 @@ class _DiscoverState extends State<Discover> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(
-                      color: Colors.white60,
+                      color: Colors.white,
                       width: 1
                   ),
                 ),
@@ -390,7 +306,7 @@ class _DiscoverState extends State<Discover> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(
-                      color: Colors.white60,
+                      color: Colors.white,
                       width: 1
                   ),
                 ),
@@ -405,7 +321,7 @@ class _DiscoverState extends State<Discover> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all(
-                        color: Colors.white60,
+                        color: Colors.white,
                         width: 1
                     ),
                   ),
@@ -420,7 +336,7 @@ class _DiscoverState extends State<Discover> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all(
-                        color: Colors.white60,
+                        color: Colors.white,
                         width: 1
                     ),
                   ),
@@ -435,34 +351,23 @@ class _DiscoverState extends State<Discover> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        bottom:PreferredSize(
-          child: Container(
-            color: Colors.white60,
-            height: 0.5,
-          ),
-          preferredSize: Size.fromHeight(0.5),
-        ),
-        title: const Text(
-          'Discover',
-        style: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.normal
-        ),
-        ),
-      ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
+    return Container(
+      child: SingleChildScrollView(
+        // scrollDirection: Axis.vertical,
         child: Column(
           children: <Widget>[
             SizedBox(
               height: 20,
             ),
             categoryList(),
+            SizedBox(
+              height: 20,
+            ),
             discoverBody(),
-            gridCategory()
+            SizedBox(
+              height: 20,
+            ),
+
           ],
         ),
       ),
